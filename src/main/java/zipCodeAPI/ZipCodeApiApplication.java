@@ -9,5 +9,4 @@ public class ZipCodeApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ZipCodeApiApplication.class, args);
 	}
-
 }
