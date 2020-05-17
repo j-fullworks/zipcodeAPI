@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import zipCodeAPI.domain.dto.ZipcodeDto;
 import zipCodeAPI.domain.form.AddressForm;
 import zipCodeAPI.domain.service.FrontService;
 
@@ -26,7 +27,7 @@ public class FrontController {
 
 	@ResponseBody
     @RequestMapping(value = "/getAddress" ,method = RequestMethod.POST, produces="application/json;charset=UTF-8")
-    public String getAddress(@RequestBody(required = false) AddressForm addressForm) {
+    public ZipcodeDto getAddress(@RequestBody(required = false) AddressForm addressForm) {
 		return frontService.getAddress(addressForm.getZipcode());
     }
 }
