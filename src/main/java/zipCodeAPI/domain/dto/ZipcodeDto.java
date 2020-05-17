@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class ZipCodeDto {
+public class ZipcodeDto {
 
     /** ステータス */
     int status;
@@ -15,5 +15,5 @@ public class ZipCodeDto {
     String message;
 
     /** 郵便番号情報リスト */
-    List<ZipCodeDataDto> results = new ArrayList<>();
+    List<ZipcodeResultDto> results = new ArrayList<>();
 }

@@ -1,6 +1,8 @@
 package zipCodeAPI.domain.service;
 
+import zipCodeAPI.domain.dto.ZipcodeDto;
+
 public interface FrontService {
 
-	public String getAddress(String zipCode);
+	public ZipcodeDto getAddress(String zipCode);
 }

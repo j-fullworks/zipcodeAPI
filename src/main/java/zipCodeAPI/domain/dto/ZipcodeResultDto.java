@@ -2,7 +2,7 @@ package zipCodeAPI.domain.dto;
 import lombok.Data;
 
 @Data
-public class ZipCodeDataDto {
+public class ZipcodeResultDto {
 
 	/** 郵便番号 */
     String zipcode;
