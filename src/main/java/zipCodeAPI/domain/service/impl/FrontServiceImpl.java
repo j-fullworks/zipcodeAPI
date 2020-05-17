@@ -3,7 +3,6 @@ package zipCodeAPI.domain.service.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import zipCodeAPI.domain.dto.ZipcodeDto;
 import zipCodeAPI.domain.service.FrontService;
 
 @Service
@@ -17,8 +16,8 @@ public class FrontServiceImpl implements FrontService {
     private static final String URL = "https://zip-cloud.appspot.com/api/search?zipcode={zipcode}";
 
 	@Override
-	public ZipcodeDto getAddress(String zipCode) {
-		ZipcodeDto zipcodeDto = restTemplate.getForObject(URL, ZipcodeDto.class, zipCode);
+	public String getAddress(String zipCode) {
+		String zipcodeDto = restTemplate.getForObject(URL, String.class, zipCode);
 		return zipcodeDto;
 	}
 }
