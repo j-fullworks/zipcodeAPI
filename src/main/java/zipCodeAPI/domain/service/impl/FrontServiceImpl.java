@@ -31,7 +31,7 @@ public class FrontServiceImpl implements FrontService {
 //    private static final String URL = "https://zip-cloud.appspot.com/api/search?zipcode=%s";
 
 	/**
-	 * JackSon
+	 * MappingJackson2
 	 */
     private static final String URL = "https://zip-cloud.appspot.com/api/search?zipcode={zipCode}";
 
@@ -47,7 +47,7 @@ public class FrontServiceImpl implements FrontService {
 //			zipcodeDto = objectMapper.readValue(url, ZipcodeDto.class);
 
 			/**
-			 * JackSon
+			 * JMappingJackson2
 			 */
 			MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter();
 		    List<MediaType> supportedMediaTypes = new ArrayList<>(messageConverter.getSupportedMediaTypes());
@@ -56,7 +56,7 @@ public class FrontServiceImpl implements FrontService {
 		    restTemplate.setMessageConverters(Collections.singletonList(messageConverter)); // カスタムしたHttpMessageConverterを適用
 			zipcodeDto = restTemplate.getForObject(URL, ZipcodeDto.class, zipCode);
 		} catch (Exception e) {
-
+			e.getStackTrace();
 		}
 
 		return zipcodeDto;
